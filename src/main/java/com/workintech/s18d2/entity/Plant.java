@@ -11,8 +11,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@MappedSuperclass
-
+@MappedSuperclass // Bu annotations plant tablosu olupşumu engeller. Bu bu class miras alımını sağlar.
 
 public class Plant {
 
