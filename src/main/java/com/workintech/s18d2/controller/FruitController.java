@@ -3,21 +3,24 @@ package com.workintech.s18d2.controller;
 
 import com.workintech.s18d2.dto.FruitResponse;
 import com.workintech.s18d2.entity.Fruit;
-import com.workintech.s18d2.service.FruitService;
+import com.workintech.s18d2.services.FruitService;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+
 @RestController
 @RequestMapping("/fruit")
 public class FruitController {
 
     private final FruitService fruitService;
+
+    public FruitController(FruitService fruitService) {
+        this.fruitService = fruitService;
+    }
 
     @GetMapping("/desc")
     public List<Fruit> getByPriceDesc(){
